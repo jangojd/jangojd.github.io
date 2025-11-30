@@ -15,8 +15,35 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #1a202c;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1a3a52 100%);
             min-height: 100vh;
+        }
+
+        /* Animated oil rig background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.08;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, #d4af37 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, #f59e0b 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.05); }
         }
 
         .container {
@@ -25,35 +52,21 @@
             padding: 20px;
         }
 
-        /* Animated background gradient */
-        .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #4facfe);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-            opacity: 0.1;
+        /* Petroleum-themed gradient borders */
+        .oil-accent {
+            position: relative;
+            background: linear-gradient(135deg, #0f172a, #1a3a52);
         }
 
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Header with modern glassmorphism */
+        /* Header with oil theme */
         header {
-            background: rgba(255, 255, 255, 0.95);
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(26, 58, 82, 0.95) 100%);
             backdrop-filter: blur(30px);
-            border: 1px solid rgba(255, 255, 255, 0.7);
+            border: 2px solid rgba(212, 175, 55, 0.3);
             padding: 80px 40px;
             border-radius: 25px;
             margin-bottom: 50px;
-            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+            box-shadow: 0 25px 50px rgba(212, 175, 55, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -66,7 +79,7 @@
             right: -10%;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
             border-radius: 50%;
             animation: float 20s linear infinite;
         }
@@ -78,7 +91,7 @@
             left: -10%;
             width: 300px;
             height: 300px;
-            background: radial-gradient(circle, rgba(118, 75, 162, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
             border-radius: 50%;
             animation: float-reverse 25s linear infinite;
         }
@@ -102,7 +115,7 @@
             font-size: 3.5em;
             margin-bottom: 10px;
             font-weight: 800;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #d4af37 0%, #f59e0b 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -112,10 +125,7 @@
         .tagline {
             font-size: 1.4em;
             margin-bottom: 30px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #d4af37;
             font-weight: 500;
         }
 
@@ -132,14 +142,14 @@
             align-items: center;
             gap: 8px;
             padding: 12px 24px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, #d4af37 0%, #f59e0b 100%);
+            color: #0f172a;
             text-decoration: none;
             border-radius: 30px;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             font-weight: 600;
             border: 2px solid transparent;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
             position: relative;
             overflow: hidden;
         }
@@ -161,17 +171,17 @@
 
         .contact-links a:hover {
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
         }
 
         .section {
-            background: rgba(255, 255, 255, 0.98);
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.98) 0%, rgba(15, 23, 42, 0.98) 100%);
             backdrop-filter: blur(10px);
             padding: 50px 40px;
             border-radius: 20px;
             margin-bottom: 40px;
-            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 25px 50px rgba(212, 175, 55, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.2);
             transition: all 0.4s ease;
             position: relative;
         }
@@ -183,23 +193,19 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+            background: linear-gradient(90deg, #d4af37, #f59e0b, #d4af37);
             border-radius: 20px 20px 0 0;
-            opacity: 0;
-            transition: opacity 0.4s ease;
+            opacity: 0.5;
         }
 
         .section:hover {
-            box-shadow: 0 16px 48px rgba(102, 126, 234, 0.15);
+            box-shadow: 0 25px 60px rgba(212, 175, 55, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            border-color: rgba(212, 175, 55, 0.4);
             transform: translateY(-2px);
         }
 
-        .section:hover::before {
-            opacity: 1;
-        }
-
         h2 {
-            color: #667eea;
+            color: #d4af37;
             font-size: 2.2em;
             margin-bottom: 30px;
             font-weight: 700;
@@ -214,14 +220,14 @@
             left: 0;
             width: 80px;
             height: 5px;
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background: linear-gradient(90deg, #d4af37 0%, #f59e0b 50%, #d4af37 100%);
             border-radius: 3px;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
         }
 
         .about-content {
             font-size: 1.1em;
-            color: #2d3748;
+            color: #cbd5e1;
             line-height: 1.9;
         }
 
@@ -237,19 +243,19 @@
         }
 
         .project-card {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%);
+            background: linear-gradient(135deg, rgba(30, 58, 76, 0.8) 0%, rgba(15, 23, 42, 0.8) 100%);
             backdrop-filter: blur(10px);
             padding: 35px;
             border-radius: 20px;
-            color: white;
+            color: #e2e8f0;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
         }
 
         .project-card::before {
@@ -259,7 +265,7 @@
             right: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
             animation: pulse-gradient 3s ease-in-out infinite;
         }
 
@@ -270,7 +276,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
             transition: left 0.6s ease;
         }
 
@@ -285,14 +291,14 @@
 
         .project-card:hover {
             transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 24px 60px rgba(102, 126, 234, 0.5);
-            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 24px 60px rgba(212, 175, 55, 0.3);
+            border-color: rgba(212, 175, 55, 0.4);
         }
 
         .project-card h3 {
             font-size: 1.6em;
             margin-bottom: 15px;
-            color: white;
+            color: #d4af37;
             font-weight: 700;
             position: relative;
             z-index: 2;
@@ -301,7 +307,7 @@
         .project-card p {
             line-height: 1.7;
             margin-bottom: 20px;
-            opacity: 0.98;
+            opacity: 0.95;
             position: relative;
             z-index: 2;
             flex-grow: 1;
@@ -317,29 +323,30 @@
         }
 
         .tag {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(212, 175, 55, 0.15);
             padding: 7px 16px;
             border-radius: 20px;
             font-size: 0.85em;
             font-weight: 600;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: #d4af37;
             transition: all 0.3s ease;
         }
 
         .tag:hover {
-            background: rgba(255, 255, 255, 0.25);
-            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(212, 175, 55, 0.25);
+            border-color: rgba(212, 175, 55, 0.5);
         }
 
         .project-link {
             display: inline-block;
             padding: 12px 24px;
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
+            background: linear-gradient(135deg, #d4af37 0%, #f59e0b 100%);
+            color: #0f172a;
             text-decoration: none;
             border-radius: 25px;
-            border: 2px solid white;
+            border: 2px solid #d4af37;
             font-weight: 700;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             align-self: flex-start;
@@ -348,10 +355,8 @@
         }
 
         .project-link:hover {
-            background: white;
-            color: #667eea;
             transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
         }
 
         .skills-container {
@@ -362,12 +367,12 @@
         }
 
         .skill-category {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+            background: linear-gradient(135deg, rgba(30, 58, 76, 0.6) 0%, rgba(15, 23, 42, 0.6) 100%);
             backdrop-filter: blur(10px);
             padding: 30px;
             border-radius: 15px;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 2px solid rgba(102, 126, 234, 0.2);
+            border: 2px solid rgba(212, 175, 55, 0.2);
             position: relative;
             overflow: hidden;
         }
@@ -379,16 +384,15 @@
             left: 0;
             right: 0;
             height: 2px;
-            background: linear-gradient(90deg, #667eea, transparent);
+            background: linear-gradient(90deg, #d4af37, transparent);
             opacity: 0;
             transition: opacity 0.4s ease;
         }
 
         .skill-category:hover {
             transform: translateX(8px);
-            box-shadow: 0 12px 40px rgba(102, 126, 234, 0.2);
-            border-color: rgba(102, 126, 234, 0.4);
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+            box-shadow: 0 12px 40px rgba(212, 175, 55, 0.2);
+            border-color: rgba(212, 175, 55, 0.4);
         }
 
         .skill-category:hover::before {
@@ -396,7 +400,7 @@
         }
 
         .skill-category h3 {
-            color: #667eea;
+            color: #d4af37;
             margin-bottom: 15px;
             font-size: 1.3em;
             font-weight: 700;
@@ -408,7 +412,7 @@
 
         .skill-category li {
             padding: 8px 0;
-            color: #2d3748;
+            color: #cbd5e1;
             font-weight: 500;
             position: relative;
             padding-left: 24px;
@@ -416,30 +420,25 @@
         }
 
         .skill-category li::before {
-            content: '▸';
+            content: '⬢';
             position: absolute;
             left: 0;
-            color: #667eea;
+            color: #d4af37;
             font-weight: bold;
-            font-size: 1.2em;
             transition: all 0.3s ease;
         }
 
         .skill-category li:hover {
-            color: #667eea;
+            color: #d4af37;
             padding-left: 28px;
-        }
-
-        .skill-category li:hover::before {
-            color: #764ba2;
         }
 
         .experience-item {
             margin-bottom: 25px;
             padding: 30px;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+            background: linear-gradient(135deg, rgba(30, 58, 76, 0.4) 0%, rgba(15, 23, 42, 0.4) 100%);
             border-radius: 15px;
-            border-left: 6px solid #667eea;
+            border-left: 6px solid #d4af37;
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
@@ -452,18 +451,18 @@
             right: 0;
             width: 200px;
             height: 200px;
-            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
             border-radius: 50%;
         }
 
         .experience-item:hover {
-            box-shadow: 0 12px 32px rgba(102, 126, 234, 0.2);
-            border-left-color: #764ba2;
+            box-shadow: 0 12px 32px rgba(212, 175, 55, 0.2);
+            border-left-color: #f59e0b;
             transform: translateX(5px);
         }
 
         .experience-item h3 {
-            color: #667eea;
+            color: #d4af37;
             font-size: 1.5em;
             margin-bottom: 8px;
             font-weight: 700;
@@ -472,7 +471,7 @@
         }
 
         .experience-meta {
-            color: #667eea;
+            color: #f59e0b;
             font-size: 0.95em;
             margin-bottom: 12px;
             font-weight: 600;
@@ -482,7 +481,7 @@
 
         .experience-item ul {
             margin-left: 20px;
-            color: #2d3748;
+            color: #cbd5e1;
             position: relative;
             z-index: 1;
         }
@@ -495,7 +494,7 @@
         footer {
             text-align: center;
             padding: 40px;
-            color: #667eea;
+            color: #d4af37;
             font-size: 0.95em;
             margin-top: 40px;
             font-weight: 500;
@@ -605,6 +604,18 @@
                     </div>
                     <a href="https://eorapp-v8fshj4v55sjkxmumhi2c6.streamlit.app/" class="project-link" target="_blank">Live Demo →</a>
                 </div>
+
+                <div class="project-card">
+                    <h3>⛽ Reservoir Simulation with PyMRST</h3>
+                    <p>Advanced reservoir simulation framework leveraging MATLAB Reservoir Simulation Toolbox (MRST) through Python. Implements complex fluid flow dynamics, well management, and multiphase simulation for field development optimization.</p>
+                    <div class="project-tags">
+                        <span class="tag">PyMRST</span>
+                        <span class="tag">Reservoir Sim</span>
+                        <span class="tag">Fluid Flow</span>
+                        <span class="tag">Numerical Methods</span>
+                    </div>
+                    <a href="https://github.com/jangojd/Reservoir_simulation_Pymrst/tree/main" class="project-link" target="_blank">View Project →</a>
+                </div>
             </div>
         </div>
 
@@ -614,7 +625,7 @@
             <div class="experience-item">
                 <h3>🎤 Machine Learning for EOR Screening: A Practical Application</h3>
                 <p class="experience-meta">📍 Annual Technical Conference (ATC) Islamabad | Final Year Project Presentation</p>
-                <p style="color: #2d3748; margin-top: 10px; line-height: 1.7;">Presented comprehensive research on applying machine learning algorithms to automate Enhanced Oil Recovery method screening. The presentation showcased real-world integration with petroleum industry software including Eclipse, Petrel, and T-Navigator for reservoir simulation and visualization. Demonstrated practical ML deployment in the oil and gas domain with live demonstrations of the EOR screening application.</p>
+                <p style="color: #cbd5e1; margin-top: 10px; line-height: 1.7;">Presented comprehensive research on applying machine learning algorithms to automate Enhanced Oil Recovery method screening. The presentation showcased real-world integration with petroleum industry software including Eclipse, Petrel, and T-Navigator for reservoir simulation and visualization. Demonstrated practical ML deployment in the oil and gas domain with live demonstrations of the EOR screening application.</p>
                 <div class="project-tags" style="margin-top: 15px;">
                     <span class="tag">Machine Learning</span>
                     <span class="tag">EOR Methods</span>
@@ -630,8 +641,8 @@
             
             <div class="experience-item">
                 <h3>📄 Machine Learning for EOR Screening</h3>
-                <p class="experience-meta">Status: Submitted | <a href="https://eorapp-v8fshj4v55sjkxmumhi2c6.streamlit.app/" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 700;">View Application →</a></p>
-                <p style="color: #2d3748; margin-top: 10px; line-height: 1.7;">This paper explores machine learning techniques for Enhanced Oil Recovery screening, developing predictive models to identify optimal EOR methods for different reservoir conditions. The research integrates domain knowledge from petroleum engineering with advanced ML algorithms to improve decision-making in field development.</p>
+                <p class="experience-meta">Status: Submitted | <a href="https://eorapp-v8fshj4v55sjkxmumhi2c6.streamlit.app/" target="_blank" style="color: #d4af37; text-decoration: none; font-weight: 700;">View Application →</a></p>
+                <p style="color: #cbd5e1; margin-top: 10px; line-height: 1.7;">This paper explores machine learning techniques for Enhanced Oil Recovery screening, developing predictive models to identify optimal EOR methods for different reservoir conditions. The research integrates domain knowledge from petroleum engineering with advanced ML algorithms to improve decision-making in field development.</p>
                 <div class="project-tags" style="margin-top: 15px;">
                     <span class="tag">Machine Learning</span>
                     <span class="tag">EOR</span>
@@ -643,7 +654,7 @@
             <div class="experience-item">
                 <h3>📄 Determinants of Out of School Children</h3>
                 <p class="experience-meta">Status: Abstract Submitted</p>
-                <p style="color: #2d3748; margin-top: 10px; line-height: 1.7;">This research investigates the key determinants influencing school enrollment, with a focus on socio-economic factors, to support better localized policy interventions in underprivileged areas.</p>
+                <p style="color: #cbd5e1; margin-top: 10px; line-height: 1.7;">This research investigates the key determinants influencing school enrollment, with a focus on socio-economic factors, to support better localized policy interventions in underprivileged areas.</p>
                 <div class="project-tags" style="margin-top: 15px;">
                     <span class="tag">Machine Learning</span>
                     <span class="tag">Feature Analysis</span>
@@ -724,25 +735,5 @@
                         <li>Eclipse (Reservoir Simulator)</li>
                         <li>Petrel (Seismic Interpretation)</li>
                         <li>T-Navigator (Data Management)</li>
+                        <li>PyMRST Framework</li>
                     </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Education</h2>
-            <div class="experience-item">
-                <h3>Bachelor of Engineering in Petroleum Engineering</h3>
-                <p class="experience-meta">Mehran University of Engineering and Technology, Jamshoro | Jan 2024</p>
-                <p style="color: #2d3748; margin-top: 10px;">GPA: 3.0/4.0</p>
-            </div>
-        </div>
-
-        <footer>
-            <p>&copy; 2025 Jawad Ali. All rights reserved.</p>
-            <p style="margin-top: 10px; opacity: 0.8;">Built with passion for ML research and interdisciplinary innovation</p>
-        </footer>
-    </div>
-</body>
-
-</html>
